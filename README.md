@@ -1,5 +1,7 @@
 # greenleaves
 
+## Deployed [Demo](https://greenleaves-deployed.herokuapp.com/)
+
 Greenleaves is a business-to-business (B2B) fullstack web application enabling customers to place orders with an Asian vegetable wholesaler for pickup or delivery.  Orders may be placed in the following languages:
 
 * English
