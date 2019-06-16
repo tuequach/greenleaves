@@ -5,7 +5,7 @@ Greenleaves is a business-to-business (B2B) fullstack web application enabling c
 * English
 * Vietnamese
 * Korean
-* Chinese (Mandarin)
+* Chinese (Simplified)
 
 Additionally, the application allows an administrator to upload and edit the product catalog.
 
