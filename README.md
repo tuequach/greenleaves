@@ -14,7 +14,7 @@ Additionally, the application allows an administrator to upload and edit the pro
 ### Frontend
 
 * React with Material Design UI
-* i18n with react-18next(?)
+* Internationalization with react-i18next
 * Javascript
 * HTML
 * CSS
@@ -27,8 +27,8 @@ Additionally, the application allows an administrator to upload and edit the pro
 * ExpressJS web server
 * Sequelize ORM
 * MySQL
-* Authentication with Auth0(?)
-* i18n with 18next(?)
+* Authentication with Auth0
+* Internationalization with i18next
 
 ## Design
 
