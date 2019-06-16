@@ -38,7 +38,7 @@ Additionally, the application allows an administrator to upload and edit the pro
 
 Disclaimer: 
 
-I'm abusing the UML notation a bit since the fork and join symbols imply processes that run in parallel, whereas I'm using them to describe alternate task-flow for customer and admin users.  My apologies to thousand UML gods in the sky.
+I'm abusing the UML notation a bit since the fork and join symbols imply processes that run in parallel, whereas I'm using them to describe alternate task-flows for customer and admin users.  My apologies to thousand UML gods in the sky.
 
 ![alt](docs/img/uml-ad-cust.png)
 
