@@ -49,3 +49,9 @@ I'm abusing the UML notation a bit since the fork and join symbols imply process
 ### Data Design (Entity Relationship Diagram)
 
 ![alt](/docs/img/greenleaf_ERD.png)
+
+## Routes
+
+### API Routes
+
+### Web client routes
