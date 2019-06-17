@@ -32,6 +32,10 @@ Additionally, the application allows an administrator to upload and edit the pro
 * Authentication with Auth0
 * Internationalization with i18next
 
+### Testing
+
+Unit and Integration tests in Jest.
+
 ## Design
 
 ### Customer Activity Diagram
