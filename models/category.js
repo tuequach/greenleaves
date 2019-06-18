@@ -6,7 +6,7 @@ module.exports = function (sequelize, DataTypes) {
     var Category = sequelize.define("Category", {
         name: {
             type: DataTypes.STRING,
-      allowNull: true, 
+            allowNull: true
         }
     });
     return Category;
