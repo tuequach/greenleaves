@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 
-var db = require("../models");
+var db = require("../../models");
 
 // Routes
 // =============================================================
@@ -14,17 +14,15 @@ module.exports = function(app) {
   });
 
   // Get route for returning posts of a specific category
-  app.post("/api/admin/add", function(req, res) {
-      db.Product.create({
-         name: req.body.name,
-         quantity: req.body.quantity,
-         unit: req.body.unit
-      }).then(function(dbProduct){
-        res.json(dbProduct);
-      });
-    // Add sequelize code to find all posts where the category is equal to req.params.category,
-    // return the result to the user with res.json
-  });
+  // app.post("/api/admin/add", function(req, res) {
+  //     db.Product.create({
+  //        name: req.body.name,
+  //        quantity: req.body.quantity,
+  //        unit: req.body.unit
+  //     }).then(function(dbProduct){
+  //       res.json(dbProduct);
+  //     });
+  // });
 
 
   // Get route for retrieving a single product by id
@@ -44,6 +42,6 @@ module.exports = function(app) {
     }).then(function(dbProduct){
       res.json(dbProduct);
     });
- 
 });
+
 };
