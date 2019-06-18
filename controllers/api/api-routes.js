@@ -27,7 +27,9 @@ var db = require("../../models");
   // Get route for retrieving a single product by id
   router.get("/products/:id", function(req, res) {
       db.Product.findOne({
-        id: req.params.id
+        where: {
+          id: req.params.id
+        }
       }).then(function(dbProduct){
         res.json(dbProduct);
       });
@@ -37,7 +39,9 @@ var db = require("../../models");
   // Get route for retrieving  all product by name
   router.get("/products/:name", function(req, res) {
     db.Product.findAll({
-      name: req.params.name
+      where: {
+        name: req.params.name
+      }
     }).then(function(dbProduct){
       res.json(dbProduct);
     });
