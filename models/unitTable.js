@@ -3,7 +3,7 @@
 module.exports = function(sequelize, DataTypes) {
   var unitTable = sequelize.define("unitTable", {
     unitTable: {
-      name: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     }
   });
