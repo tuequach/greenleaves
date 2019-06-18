@@ -12,7 +12,7 @@ var db = require("../../models");
   });
 
   // Get route for returning posts of a specific category
-  router.post("/admin/add", function(req, res) {
+  router.post("/products/add", function(req, res) {
     console.log("Post was hit with req", req.body);
       db.Product.create({
          name: req.body.name,
