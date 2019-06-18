@@ -6,27 +6,27 @@ module.exports = function(sequelize, DataTypes) {
   var Product = sequelize.define("Product", {
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
     }, 
     description: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
     },
     category: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
     },
     quantity: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     availability: {
       type: DataTypes.BOOLEAN,
-      allowNull: false,
+      allowNull: true,
     },
     unit_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     }
   });
   return Product;
