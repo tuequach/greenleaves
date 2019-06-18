@@ -9,7 +9,7 @@ export default class AddProduct extends Component {
     this.state = {
       name: "",
       unitId: "",
-      availability: ""
+      availability: true
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,9 +30,9 @@ export default class AddProduct extends Component {
     console.log("submit");
     event.preventDefault();
     axios
-      .post("/api/products", {
+      .post("/api/products/add", {
         name: this.state.name,
-        unitId: this.state.unitId,
+        unit_id: this.state.unitId,
         availability: this.state.availability
       })
       .then(function(response) {
@@ -56,16 +56,8 @@ export default class AddProduct extends Component {
         />
         <TextField
           id="outlined-name"
-          label="Units"
-          name="units"
-          onChange={this.handleChange}
-          margin="normal"
-          variant="outlined"
-        />
-        <TextField
-          id="outlined-name"
-          label="Availability"
-          name="availability"
+          label="Unit Id"
+          name="unitId"
           onChange={this.handleChange}
           margin="normal"
           variant="outlined"
