@@ -14,8 +14,8 @@ function getDBConfigFromUrl(url){
 const config = {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "local_db",
+    "password": "password",
+    "database": "greenleaves_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
