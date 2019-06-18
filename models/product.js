@@ -4,7 +4,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Product = sequelize.define("Product", {
-    name_en: {
+    name: {
       type: DataTypes.STRING,
       allowNull: true,
     },
