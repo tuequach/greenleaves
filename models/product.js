@@ -4,7 +4,11 @@
 
 module.exports = function(sequelize, DataTypes) {
   var Product = sequelize.define("Product", {
-    name: {
+    name_en: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    name_cn: {
       type: DataTypes.STRING,
       allowNull: true,
     },
