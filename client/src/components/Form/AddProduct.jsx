@@ -7,7 +7,7 @@ export default class AddProduct extends Component {
   constructor() {
     super();
     this.state = {
-      engName: "",
+      enName: "",
       cnName: "",
       unitId: "",
       availability: true
@@ -33,7 +33,7 @@ export default class AddProduct extends Component {
 
     axios
       .post("/api/products/add", {
-        name_en: this.state.engName,
+        name_en: this.state.enName,
         name_cn: this.state.cnName,
         unit_id: this.state.unitId,
         availability: this.state.availability
@@ -52,7 +52,7 @@ export default class AddProduct extends Component {
         <TextField
           id="outlined-name"
           label="Product Name"
-          name="engName"
+          name="enName"
           onChange={this.handleChange}
           margin="normal"
           variant="outlined"
