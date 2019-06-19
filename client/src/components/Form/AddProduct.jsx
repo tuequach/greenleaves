@@ -8,6 +8,7 @@ export default class AddProduct extends Component {
     super();
     this.state = {
       engName: "",
+      cnName: "",
       unitId: "",
       availability: true
     };
@@ -33,6 +34,7 @@ export default class AddProduct extends Component {
     axios
       .post("/api/products/add", {
         name_en: this.state.engName,
+        name_cn: this.state.cnName,
         unit_id: this.state.unitId,
         availability: this.state.availability
       })
@@ -49,8 +51,16 @@ export default class AddProduct extends Component {
       <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
         <TextField
           id="outlined-name"
-          label="Product name"
+          label="Product Name"
           name="engName"
+          onChange={this.handleChange}
+          margin="normal"
+          variant="outlined"
+        />
+        <TextField
+          id="outlined-name"
+          label="Product Name (Chinese)"
+          name="cnName"
           onChange={this.handleChange}
           margin="normal"
           variant="outlined"
