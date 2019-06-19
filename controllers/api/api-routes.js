@@ -15,7 +15,8 @@ var db = require("../../models");
   router.post("/products/add", function(req, res) {
     console.log("Post was hit with req", req.body);
       db.Product.create({
-         name: req.body.name,
+         name_en: req.body.name_en,
+         name_cn: req.body.name_cn,
          quantity: req.body.quantity,
          unit: req.body.unit
       }).then(function(dbProduct){
@@ -40,12 +41,12 @@ var db = require("../../models");
   router.get("/products/:name", function(req, res) {
     db.Product.findAll({
       where: {
-        name: req.params.name
+        name_en: req.params.name_en,
+        name_cn: req.params.name_cn
       }
     }).then(function(dbProduct){
       res.json(dbProduct);
     });
 });
-
 
 module.exports = router;
