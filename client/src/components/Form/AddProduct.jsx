@@ -1,88 +1,70 @@
-import React, { Component } from "react";
+import React, { useState , useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 
-export default class AddProduct extends Component {
-  constructor() {
-    super();
-    this.state = {
-      enName: "",
-      cnName: "",
-      unitId: "",
-      availability: true
+
+const AddProduct = () => {
+  const [enName, setEnName] = useState({ hits: [] });
+  const [cnName, setCnName] = useState({ hits: [] });
+  const [unit_id, setUnitId] = useState({ hits: [] });
+
+  useEffect (() => {
+
+    const fetchData = async () => {
+      const result = await axios (
+        "localhost:3000/addproduct/search?query=redux",
+      );
+      setEnName(result.data);
+      setCnName(result.data);
+      setUnitId(result.data);
+  
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+    fetchData();
+  }, []);
 
-  handleChange(event) {
-    console.log("handleChange");
-    console.log(event);
-    console.log(event.target);
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-    console.log(this.state);
-  }
+  return (
+    <form noValidate autoComplete="off">
+      <TextField
+        value ={enName}
+        onChange= {e => setEnName(e.target.value)}
+        label="Product Name"
+        type="text"
+        name="enName"
+        margin="normal"
+        variant="outlined"
+      />
+      <TextField
+        id="outlined-name"
+        value = {cnName}
+        onChange= {e => setCnName(e.target.value)}
+        label="Product Name (Chinese)"
+        type ="text"
+        name="cnName"
+        margin="normal"
+        variant="outlined"
+      />
+      <TextField
+        id="outlined-name"
+        value = {unit_id}
+        onChange= {e => setUnitId(e.target.value)}
+        label = "Unit Id"
+        type ="text"
+        name="unit_id"
+        margin="normal"
+        variant="outlined"
+      />
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        type="submit"
+        value="submit"
+      >
+        Submit
+      </Button>
+    </form>
+  );
+};
 
-  handleSubmit(event) {
-    console.log("submit");
-    event.preventDefault();
-
-    axios
-      .post("/api/products/add", {
-        name_en: this.state.enName,
-        name_cn: this.state.cnName,
-        unit_id: this.state.unitId,
-        availability: this.state.availability
-      })
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
-        <TextField
-          id="outlined-name"
-          label="Product Name"
-          name="enName"
-          onChange={this.handleChange}
-          margin="normal"
-          variant="outlined"
-        />
-        <TextField
-          id="outlined-name"
-          label="Product Name (Chinese)"
-          name="cnName"
-          onChange={this.handleChange}
-          margin="normal"
-          variant="outlined"
-        />
-        <TextField
-          id="outlined-name"
-          label="Unit Id"
-          name="unitId"
-          onChange={this.handleChange}
-          margin="normal"
-          variant="outlined"
-        />
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          type="submit"
-          value="submit"
-        >
-          Submit
-        </Button>
-      </form>
-    );
-  }
-}
+export default AddProduct;
