@@ -13,7 +13,7 @@ const AddProduct = () => {
 
     const fetchData = async () => {
       const result = await axios (
-        "localhost:3000/addproduct/search?query=redux",
+        "https://tuequach-greenleaves.herokuapp.com/api/products/search?query=redux",
       );
       setEnName(result.data);
       setCnName(result.data);
